@@ -81,7 +81,7 @@
 				{control dropzone}
                 {if $staff->cover}
 					<div class="position-relative" n:if="$staff->cover">
-						<img src="{$basePath}/upload/staff/{$staff->id}/{$staff->cover}?{filemtime(WWW . '/upload/staffs/' . $staff->id . '/' . $staff->cover)}" class="img-fluid" />
+						<img src="{$basePath}/upload/staff/{$staff->id}/{$staff->cover}?{filemtime(WWW . '/upload/staff/' . $staff->id . '/' . $staff->cover)}" class="img-fluid" />
 						<div class="position-absolute" style="bottom: 0; width: 100%;">
 							<div class="text-center mb-3">
 								<a n:href="cropImage!" class="ajax btn btn-primary btn-sm">

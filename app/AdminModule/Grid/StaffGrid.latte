@@ -16,19 +16,13 @@
 
 {define body-cell-class_id}
 	<td>
-		{$record->class_id->name}
+		{($record->class_id != NULL) ? $record->class->name : 'Žádná'}
 	</td>
 {/define}
 
 {define body-cell-description}
 	<td>
 		{$record->description|striptags|truncate:75|noescape}
-	</td>
-{/define}
-
-{define body-cell-created}
-	<td class="text-right">
-		{$record->created|date:'d.m.Y'}
 	</td>
 {/define}
 

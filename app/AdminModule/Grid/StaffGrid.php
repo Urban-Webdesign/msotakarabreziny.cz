@@ -32,7 +32,6 @@ class StaffGrid extends BaseV2Grid
 		$this->addColumn('surname', 'Příjmení');
 		$this->addColumn('class_id', 'Třída');
 		$this->addColumn('description', 'Poznámka');
-		$this->addColumn('created', 'Vytvořen')->setSortable();
 		$this->addColumn('public', 'Veřejný');
 
 		$this->addRowAction('edit', 'Upravit', static function () {});
