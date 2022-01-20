@@ -4,7 +4,7 @@
 	<div class="body">
 		<span id="top"></span>
 
-		<nav class="navbar navbar-light bg-light">
+		<nav class="navbar navbar-light">
 			<div class="container">
 				<a class="navbar-brand" n:href="Homepage:">
 					<img src="{$basePath}/dist/img/logo.png" alt="Mateřská škola Otakara Březiny Žatec" class="d-none d-sm-inline-block">
@@ -70,7 +70,7 @@
 			</div>
 		</nav>
 
-		<div id="carouselExampleIndicators" class="carousel slide carousel-fade container" data-ride="carousel">
+		<div id="carouselExampleIndicators" class="d-none carousel slide carousel-fade container" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -101,24 +101,30 @@
 			</a>
 		</div>
 
-		<div class="classes-container container">
-			<nav class="classes">
-				<a n:href="Homepage:slunicka" class="class sun">
-					Sluníčka
-				</a>
-				<a n:href="Homepage:rybicky" class="class fish">
-					Rybičky
-				</a>
-				<a n:href="Homepage:veverky" class="class squirrel">
-					Veverky
-				</a>
-				<a n:href="Homepage:broucci" class="class bug">
-					Broučci
-				</a>
-			</nav>
-		</div>
+		<header class="container-fluid">
+			<div class="container">
+				<h1>Oficiální webové stránky mateřská školy Otakara Březiny v Žatci</h1>
+			</div>
+
+		</header>
 
 		<main class="page container">
+			<div class="classes-container container">
+				<nav class="classes">
+					<a n:href="Homepage:slunicka" class="class sun">
+						Sluníčka
+					</a>
+					<a n:href="Homepage:rybicky" class="class fish">
+						Rybičky
+					</a>
+					<a n:href="Homepage:veverky" class="class squirrel">
+						Veverky
+					</a>
+					<a n:href="Homepage:broucci" class="class bug">
+						Broučci
+					</a>
+				</nav>
+			</div>
 			<div class="page-content">
 				<ul class="nav sidenav flex-column d-none d-lg-block">
 					<li class="nav-item">
@@ -166,7 +172,7 @@
 					<li class="nav-item">
 						<a class="nav-link" n:href="Homepage:contact"><i class='fa fa-fw fa-calendar'></i> Kontakty</a>
 					</li>
-					<img class="mt-4" src="{$basePath}/dist/img/img.png" alt="Logo Sluníčko">
+					<img class="mt-4 p-4 img-fluid" src="{$basePath}/dist/img/img.png" alt="Logo Sluníčko">
 				</ul>
 
 				{include #content}

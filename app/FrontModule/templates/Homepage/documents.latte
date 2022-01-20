@@ -3,20 +3,46 @@
 		<div class="container">
 			<ul class="nav nav-pills mb-4">
 				<li class="nav-item">
-					<a class="btn btn-primary nav-link mr-2" n:href="Homepage:documentsProgram">ŠVP</a>
+					<a class="btn btn-primary nav-link mr-2 mb-2 active" n:href="Homepage:documents">Dokumenty</a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-primary nav-link mr-2" n:href="Homepage:documentsRules">Školní řád</a>
+					<a class="btn btn-primary nav-link mr-2 mb-2" n:href="Homepage:documentsProgram">ŠVP</a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-primary nav-link mr-2" n:href="Homepage:documentsEateryRules">Vnitřní řád školní jídelny</a>
+					<a class="btn btn-primary nav-link mr-2 mb-2" n:href="Homepage:documentsRules">Školní řád</a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-primary nav-link mr-2" n:href="Homepage:documentsAdvice">Doporučení rodičům</a>
+					<a class="btn btn-primary nav-link mr-2 mb-2" n:href="Homepage:documentsEateryRules">Vnitřní řád školní jídelny</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn btn-primary nav-link mr-2 mb-2" n:href="Homepage:documentsAdvice">Doporučení rodičům</a>
 				</li>
 			</ul>
 
-			<h1 n:block="title">Dokumenty</h1>
+			<h1 n:block="title" class="mb-2">Dokumenty</h1>
+
+			{if $documents != null}
+				<h4 class="mb-4">Ke stažení</h4>
+				<ul class="documents-list">
+					{foreach $documents as $doc}
+						<li>
+							<a href="{$basePath}/upload/files/dokumenty/{$doc->path}" class="btn btn-light">
+								<i class="mr-2 fa fa-file{if $doc->type === 'pdf'}-pdf
+									{elseif $doc->type === 'jpg'}-image
+									{elseif $doc->type === 'xls'}-excel
+									{elseif $doc->type === 'ptx'}-powerpoint
+									{elseif $doc->type === 'doc'}-word
+									{elseif $doc->type === 'avi' || $doc->type === 'mp4'}-video
+									{/if}
+								"></i>
+								{$doc->name}
+							</a>
+						</li>
+					{/foreach}
+				</ul>
+			{else}
+				<h4 class="mb-4">Aktuálně na webu nejsou nahrané žádné dokumenty ke stažení.</h4>
+			{/if}
 		</div>
 	</section>
 {/block}

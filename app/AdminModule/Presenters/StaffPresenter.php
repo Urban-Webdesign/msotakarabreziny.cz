@@ -2,8 +2,6 @@
 
 namespace App\AdminModule\Presenters;
 
-use App\Model\ClassModel;
-use App\Model\StaffModel;
 use K2D\Core\AdminModule\Component\CropperComponent\CropperComponent;
 use K2D\Core\AdminModule\Component\CropperComponent\CropperComponentFactory;
 use K2D\Core\AdminModule\Presenter\BasePresenter;
@@ -15,8 +13,8 @@ use App\AdminModule\Grid\StaffGridFactory;
 use Nette\Application\UI\Form;
 use Nette\Database\Table\ActiveRow;
 use Nette\Http\FileUpload;
-use Nette\Utils\DateTime;
-use function assert;
+use App\Model\ClassModel;
+use App\Model\StaffModel;
 use function file_exists;
 use function reset;
 use function unlink;
@@ -79,7 +77,7 @@ class StaffPresenter extends BasePresenter
 		$form->addEmail('email', 'Email (volitelný)')
 			->addRule(Form::MAX_LENGTH, 'Maximálné délka je %s znaků', 200);
 
-		$form->addText('phone', 'Telefonní číslo (volitelný)')
+		$form->addText('phone', 'Telefonní číslo (volitelné)')
 			->addRule(Form::MAX_LENGTH, 'Maximálné délka je %s znaků', 30);
 
 		$form->addCheckbox('public', 'Zveřejnit profil na webu')
@@ -95,15 +93,16 @@ class StaffPresenter extends BasePresenter
 
 			$staff = $this->staff;
 
-			if ($staff === null) {
-				$staff = $this->staffModel->insert($values);
-				$this->flashMessage('Novinka vytvořena');
+			if ($values['id'] === '') {
+				unset($values['id']);
+				$values['id'] = $this->staffModel->insert($values)->id;
+				$this->flashMessage('Profil vytvořen', 'success');
 			} else {
-				$staff->update($values);
-				$this->flashMessage('Novinka upravena');
+				$this->staffModel->get($values['id'])->update($values);
+				$this->flashMessage('Profil upraven', 'success');
 			}
 
-			$this->redirect('this', ['id' => $staff->id]);
+			$this->redirect('this', ['id' => $values['id']]);
 		};
 
 		return $form;
