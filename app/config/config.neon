@@ -9,7 +9,17 @@ application:
 
 services:
 	router: App\RouterFactory::createRouter()
+	repository: App\Service\ProjectModelRepository
+	# Grid
+	- App\AdminModule\Grid\StaffGridFactory
+	# Model
+	- App\Model\StaffModel
+	- App\Model\ClassModel
+
 
 parameters:
 	customTemplatesDir: %appDir%/FrontModule/templates/
+	admin:
+		menu:
+			Zaměstnanci: [':Admin:Staff:', account-multiple]
 

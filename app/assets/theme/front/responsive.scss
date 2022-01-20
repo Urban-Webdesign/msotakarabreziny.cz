@@ -1,0 +1,123 @@
+@include media-breakpoint-up(sm) {
+	.navbar {
+		.navbar-brand {
+			img {
+				max-width: 80px;
+			}
+		}
+	}
+
+	// scroll top
+	#scrollTopBtn {
+		margin: unset;
+		bottom: 2rem;
+		padding: .8rem 1.2rem;
+		right: -170px;
+		font-size: 1.2rem;
+		justify-content: space-evenly;
+		border-radius: $border-radius 0 0 $border-radius;
+
+		&:hover {
+			text-decoration: none;
+
+		}
+
+		i {
+			margin-right: .5rem;
+			color: $primary;
+			font-size: 1.5rem;
+		}
+	}
+
+	.carousel {
+		.carousel-inner {
+			.carousel-item {
+				img {
+					border-radius: $border-radius-lg;
+				}
+			}
+		}
+	}
+
+	.classes-container {
+		position: relative;
+		left: -15px;
+		width: calc(100% + 30px);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.page {
+		padding: 1.5rem 1.5rem 0 1.5rem;
+	}
+
+	.page-footer {
+		left: - 1.5rem;
+		width: calc(100% + 3rem);
+	}
+
+}
+
+@include media-breakpoint-up(lg) {
+	.collapse {
+		display: none;
+	}
+
+
+	.navbar {
+		padding: 0;
+
+		.container {
+			left: -15px;
+			position: relative;
+			width: calc(100% + 30px);
+		}
+
+		.navbar-brand {
+			font-size: 1.6rem;
+		}
+
+		.navigation-toggler {
+			display: none;
+		}
+	}
+
+	.carousel {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.page {
+		position: relative;
+		border-radius: $border-radius-lg;
+	}
+
+	.sidenav {
+		.nav-link {
+			padding-left: .5rem;
+		}
+	}
+
+	.classes {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+
+		.class {
+			font-size: 1.7rem;
+		}
+
+	}
+
+	.page-footer {
+		border-radius: 0 0 $border-radius-lg $border-radius-lg;
+
+		.footer-flex {
+			padding: 1.5rem;
+			flex-direction: row;
+			gap: 5rem;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+	}
+}

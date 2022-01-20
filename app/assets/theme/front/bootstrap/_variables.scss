@@ -33,14 +33,23 @@ $grays: map-merge(
 		$grays
 );
 
-$blue:    #007bff !default;
+$yellow:  #ffc100 !default;
+$dark-yellow: #d8a300 !default;
+
+$blue:    #0bb5d7 !default;
+$dark-blue: #00697d !default;
+
+$red:     #ff6142 !default;
+$dark-red: #bb1f1d !default;
+
+$green:   #58bb00 !default;
+$dark-green: #387701 !default;
+
+$brown: #79612d !default;
 $indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
+$purple:  #a52c7f !default;
 $pink:    #e83e8c !default;
-$red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
@@ -64,8 +73,8 @@ $colors: map-merge(
 		$colors
 );
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #de2c73 !default;
+$secondary:     #21d4f5 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
@@ -717,7 +726,7 @@ $nav-divider-margin-y:              $spacer / 2 !default;
 
 // Navbar
 
-$navbar-padding-y:                  $spacer / 2 !default;
+$navbar-padding-y:                  $spacer !default;
 $navbar-padding-x:                  $spacer !default;
 
 $navbar-nav-link-padding-x:         .5rem !default;
