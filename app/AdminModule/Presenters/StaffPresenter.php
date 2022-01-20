@@ -103,10 +103,6 @@ class StaffPresenter extends BasePresenter
 				$this->flashMessage('Novinka upravena');
 			}
 
-			$staff->update([
-				'slug' => $staff->id . '-' . $values['slug'],
-			]);
-
 			$this->redirect('this', ['id' => $staff->id]);
 		};
 
@@ -131,8 +127,8 @@ class StaffPresenter extends BasePresenter
 				Helper::mkdir($link);
 			}
 
-			if ($image->getHeight() > 1_080 || $image->getWidth() > 1_920) {
-				$image->resize(1_920, 1_080);
+			if ($image->getHeight() > 540 || $image->getWidth() > 960) {
+				$image->resize(540, 960);
 			}
 
 			$image->save($link . $fileName);
@@ -179,7 +175,7 @@ class StaffPresenter extends BasePresenter
 
 		if ($this->staff->cover !== null) {
 			$cropper->setImagePath('upload/staff/' . $this->staff->id . '/' . $this->staff->cover)
-				->setAspectRatio((float) $this->configuration->staffAspectRatio);
+				->setAspectRatio((float) .75);
 		}
 
 		$cropper->onCrop[] = function (): void {
