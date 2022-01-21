@@ -12,9 +12,14 @@ services:
 	repository: App\Service\ProjectModelRepository
 	# Grid
 	- App\AdminModule\Grid\StaffGridFactory
+	- App\AdminModule\Grid\NewGridFactory
 	# Model
 	- App\Model\StaffModel
 	- App\Model\ClassModel
+	- App\Model\CategoryModel
+	- App\Model\NewModel
+	# Dashboard
+	admin.dashboard.newpanel: App\AdminModule\Dashboard\NewPanelFactory
 
 
 parameters:
@@ -22,4 +27,9 @@ parameters:
 	admin:
 		menu:
 			Zaměstnanci: [':Admin:Staff:', account-multiple]
-
+			Aktuality: [':Admin:New:', pencil]
+		dashboard:
+			NewPanel:
+				service: admin.dashboard.newpanel
+				size: 3
+				order: 50

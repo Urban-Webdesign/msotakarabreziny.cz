@@ -4,8 +4,8 @@ namespace App\FrontModule\Presenters;
 
 use App\Model\StaffModel;
 use K2D\File\Model\FileModel;
-use K2D\News\Models\CategoryModel;
-use K2D\News\Models\NewModel;
+use App\Model\CategoryModel;
+use App\Model\NewModel;
 use Nette\Utils\Paginator;
 
 class HomepagePresenter extends BasePresenter

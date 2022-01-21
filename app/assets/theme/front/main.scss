@@ -203,6 +203,10 @@ table {
 		max-width: 100%;
 		margin-bottom: 1.5rem;
 	}
+
+	.new-content {
+		max-width: 700px;
+	}
 }
 
 // news
@@ -217,12 +221,16 @@ table {
 			padding: 1rem;
 			display: grid;
 			grid-template-columns: 1fr;
+			grid-template-areas:
+			"img"
+			"section";
 			border-radius: $border-radius-lg;
 			grid-gap: .5rem;
 			color: darken($dark-blue, 5%);
 			background: linear-gradient(to bottom right, rgba($blue, 0.15), rgba($secondary, .08));
 
 			img {
+				grid-area: img;
 				max-width: 250px;
 				width: 100%;
 				height: auto;
@@ -230,6 +238,7 @@ table {
 			}
 
 			section {
+				grid-area: section;
 				h3 {
 					color: $primary;
 				}

@@ -19,6 +19,7 @@ class RouterFactory
 
 		$router->withModule('Front')
             ->addRoute('[<lang=cs (cs)>/]', 'Homepage:default')
+            ->addRoute('[<lang=cs (cs)>/]<class (aktuality|slunicka|rybicky|veverky|brooucci)>/<slug>', 'Homepage:show')
             ->addRoute('[<lang=cs (cs)>/]aktuality', 'Homepage:default')
 			->addRoute('[<lang=cs (cs)>/]slunicka/[<page>]', 'Homepage:slunicka')
 			->addRoute('[<lang=cs (cs)>/]rybicky/[<page>]', 'Homepage:rybicky')
@@ -42,7 +43,6 @@ class RouterFactory
 			->addRoute('[<lang=cs (cs)>/]dokumenty/doporuceni-rodicum', 'Homepage:documentsAdvice')
 			->addRoute('[<lang=cs (cs)>/]gdpr', 'Homepage:gdpr')
 			->addRoute('[<lang=cs (cs)>/]kontakty', 'Homepage:contact')
-			->addRoute('[<lang=cs (cs)>/]<class>/<slug>', 'Homepage:show')
 			->addRoute('[<lang=cs (cs)>/]<presenter>/<action>', 'Error:404');
 
 		return $router;

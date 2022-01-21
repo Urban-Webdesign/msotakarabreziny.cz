@@ -8,7 +8,7 @@ use K2D\Core\Service\ModelRepository;
 use K2D\File\Model\FileModel;
 use K2D\File\Model\FolderModel;
 use K2D\Gallery\Models\ImageModel;
-use K2D\News\Models\CategoryModel;
+use App\Model\CategoryModel;
 use Nette\Database\Table\ActiveRow;
 use Nette\Database\Table\Selection;
 
@@ -23,12 +23,12 @@ class ProjectModelRepository extends ModelRepository {
     // news by category
     public function getNewsByCategory(string $category): ?Selection
     {
-        return $this->category->getItemBy($category, 'name')->related('news.category_id');
+        return $this->category->getItemBy($category, 'name')->related('articles.category_id')->order('created DESC')->order('id DESC');
     }
 
     public function getNewsByCategoryCount(string $category): int
     {
-        return $this->category->getItemBy($category, 'name')->related('news.category_id')->count();
+        return $this->category->getItemBy($category, 'name')->related('articles.category_id')->count();
     }
 
     // category
