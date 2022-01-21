@@ -1,7 +1,31 @@
 {block #content}
 	<section class="page-section">
-		<div class="container">
-			<h1 n:block="title">Galerie</h1>
+		<h1 n:block="title">Galerie</h1>
+
+		<div n:if="!empty($images)" class="row">
+			{foreach $images as $image}
+				<a href="{$basePath}/upload/galleries/1/{$image->name}" class="col-sm-6 col-md-4 col-lg-3" data-lightbox="gallery" data-name="{$image->name}">
+					<img src="{$basePath}/upload/galleries/1/thumbs/{$image->name}" class="lazyload img-thumbnail m-1" alt="{$image->title}">
+				</a>
+			{/foreach}
 		</div>
+
+		<div n:if="!empty($images)" class="pagination">
+			{if !$paginator->isFirst()}
+				<a class="mr-3" n:href="default 1">První</a>
+				<a class="mr-3" n:href="default $paginator->page-1">Předchozí</a>
+			{/if}
+
+				<span>Stránka {$paginator->page} z {$paginator->pageCount}</span>
+
+				{if !$paginator->isLast()}
+				<a class="ml-3" n:href="default $paginator->page+1">Další</a>
+				<a class="ml-3" n:href="default $paginator->pageCount">Poslední</a>
+			{/if}
+		</div>
+
+		<article n:if="empty($images)">
+			<h4>Na webu aktuálně nejsou žádné zveřejněné aktuality.</h4>
+		</article>
 	</section>
 {/block}
