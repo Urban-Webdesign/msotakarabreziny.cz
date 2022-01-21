@@ -159,7 +159,9 @@ class HomepagePresenter extends BasePresenter
 		// 3 trida
 		$this->template->veverky = $this->staffModel->getStaffByClass(3);
 		// 4 trida
-		$this->template->broucci = $this->staffModel->getStaffByClass(4);
+        $this->template->broucci = $this->staffModel->getStaffByClass(4);
+        // ostatni
+        $this->template->other = $this->staffModel->getStaffByClass(5);
 	}
 
 	public function renderDocuments(): void
