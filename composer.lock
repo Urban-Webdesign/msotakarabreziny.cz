@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a97026374f548bcf51c43e9e743877cc",
+    "content-hash": "3b0926ff2c34c06d4b05bac0504d3623",
     "packages": [
         {
             "name": "brick/date-time",
@@ -1873,16 +1873,16 @@
         },
         {
             "name": "nextras/dbal",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nextras/dbal.git",
-                "reference": "05276f83eebaadae9b7fc66d11ba835450a0d50a"
+                "reference": "05c44e728bd9362699c7a0b65ed458fcb62d02ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nextras/dbal/zipball/05276f83eebaadae9b7fc66d11ba835450a0d50a",
-                "reference": "05276f83eebaadae9b7fc66d11ba835450a0d50a",
+                "url": "https://api.github.com/repos/nextras/dbal/zipball/05c44e728bd9362699c7a0b65ed458fcb62d02ac",
+                "reference": "05c44e728bd9362699c7a0b65ed458fcb62d02ac",
                 "shasum": ""
             },
             "require": {
@@ -1938,7 +1938,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nextras/dbal/issues",
-                "source": "https://github.com/nextras/dbal/tree/v4.0.3"
+                "source": "https://github.com/nextras/dbal/tree/v4.0.4"
             },
             "funding": [
                 {
@@ -1946,7 +1946,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-04T18:57:24+00:00"
+            "time": "2022-01-09T20:39:43+00:00"
         },
         {
             "name": "nextras/migrations",
@@ -2184,12 +2184,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/auth.git",
-                "reference": "70cfc45e00e49099c0e27d0b2e16d5446f94ff48"
+                "reference": "01567383cd21ea1031b7d8d43f186bd9496fc66d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/auth/zipball/70cfc45e00e49099c0e27d0b2e16d5446f94ff48",
-                "reference": "70cfc45e00e49099c0e27d0b2e16d5446f94ff48",
+                "url": "https://api.github.com/repos/orisai/auth/zipball/01567383cd21ea1031b7d8d43f186bd9496fc66d",
+                "reference": "01567383cd21ea1031b7d8d43f186bd9496fc66d",
                 "shasum": ""
             },
             "require": {
@@ -2202,7 +2202,7 @@
             "require-dev": {
                 "brianium/paratest": "^6.3.0",
                 "ext-sodium": "*",
-                "infection/infection": "^0.25.0",
+                "infection/infection": "^0.26.0",
                 "orisai/coding-standard": "^2.0.0",
                 "phpstan/extension-installer": "^1.0.0",
                 "phpstan/phpstan": "^1.0.0",
@@ -2251,7 +2251,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-12T11:17:49+00:00"
+            "time": "2022-01-15T18:39:28+00:00"
         },
         {
             "name": "orisai/exceptions",
@@ -2324,12 +2324,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/nette-auth.git",
-                "reference": "5a898962a2cfb6b5383f1dd2658f3039a86d19aa"
+                "reference": "7a33a7202a7edabf688aa52f86e711e48d942a3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/nette-auth/zipball/5a898962a2cfb6b5383f1dd2658f3039a86d19aa",
-                "reference": "5a898962a2cfb6b5383f1dd2658f3039a86d19aa",
+                "url": "https://api.github.com/repos/orisai/nette-auth/zipball/7a33a7202a7edabf688aa52f86e711e48d942a3f",
+                "reference": "7a33a7202a7edabf688aa52f86e711e48d942a3f",
                 "shasum": ""
             },
             "require": {
@@ -2341,7 +2341,7 @@
             },
             "require-dev": {
                 "brianium/paratest": "^6.3.0",
-                "infection/infection": "^0.25.0",
+                "infection/infection": "^0.26.0",
                 "orisai/coding-standard": "^2.0.0",
                 "phpstan/extension-installer": "^1.0.0",
                 "phpstan/phpstan": "^1.0.0",
@@ -2389,20 +2389,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-12T11:18:53+00:00"
+            "time": "2022-01-15T20:32:39+00:00"
         },
         {
             "name": "orisai/nette-di",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/nette-di.git",
-                "reference": "9331cd8b0da64e962ee20e17f79f0077c66d310e"
+                "reference": "783aee878b12f24794a993c988ccf5623cb646ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/nette-di/zipball/9331cd8b0da64e962ee20e17f79f0077c66d310e",
-                "reference": "9331cd8b0da64e962ee20e17f79f0077c66d310e",
+                "url": "https://api.github.com/repos/orisai/nette-di/zipball/783aee878b12f24794a993c988ccf5623cb646ce",
+                "reference": "783aee878b12f24794a993c988ccf5623cb646ce",
                 "shasum": ""
             },
             "require": {
@@ -2413,7 +2413,7 @@
             },
             "require-dev": {
                 "brianium/paratest": "^6.3.0",
-                "infection/infection": "^0.25.0",
+                "infection/infection": "^0.26.0",
                 "latte/latte": "^2.10.0",
                 "orisai/coding-standard": "^2.0.0",
                 "phpstan/extension-installer": "^1.0.0",
@@ -2453,7 +2453,7 @@
             ],
             "support": {
                 "issues": "https://github.com/orisai/nette-di/issues",
-                "source": "https://github.com/orisai/nette-di/tree/1.0.4"
+                "source": "https://github.com/orisai/nette-di/tree/1.0.5"
             },
             "funding": [
                 {
@@ -2461,7 +2461,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-23T22:28:38+00:00"
+            "time": "2022-01-16T15:25:58+00:00"
         },
         {
             "name": "orisai/nette-http-client",
@@ -2469,12 +2469,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/nette-http-client.git",
-                "reference": "2a6c4d053e009ad5464c71ce227257e4a967d0cd"
+                "reference": "36b03dbfa9a21c48246f26b679fe2994b2106bef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/nette-http-client/zipball/2a6c4d053e009ad5464c71ce227257e4a967d0cd",
-                "reference": "2a6c4d053e009ad5464c71ce227257e4a967d0cd",
+                "url": "https://api.github.com/repos/orisai/nette-http-client/zipball/36b03dbfa9a21c48246f26b679fe2994b2106bef",
+                "reference": "36b03dbfa9a21c48246f26b679fe2994b2106bef",
                 "shasum": ""
             },
             "require": {
@@ -2486,7 +2486,7 @@
             },
             "require-dev": {
                 "brianium/paratest": "^6.3.0",
-                "infection/infection": "^0.25.0",
+                "infection/infection": "^0.26.0",
                 "orisai/coding-standard": "^2.0.0",
                 "orisai/nette-di": "^1.0.3",
                 "phpstan/extension-installer": "^1.0.0",
@@ -2537,7 +2537,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-07T02:08:51+00:00"
+            "time": "2022-01-15T19:31:14+00:00"
         },
         {
             "name": "orisai/nette-monolog",
@@ -3158,45 +3158,6 @@
                 "nette"
             ],
             "time": "2021-11-30T01:18:01+00:00"
-        },
-        {
-            "name": "simple-cms/news-module",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:K2D-CZ/news.git",
-                "reference": "f282fb70d6878c218bedfe1b4fb297f4f581118a"
-            },
-            "require": {
-                "php": ">= 7.4",
-                "simple-cms/core-module": "dev-master",
-                "simple-cms/file-module": "dev-master",
-                "simple-cms/gallery-module": "dev-master"
-            },
-            "require-dev": {
-                "orisai/coding-standard": "^2.2.0",
-                "phpstan/phpstan": "^0.12.94",
-                "phpstan/phpstan-deprecation-rules": "^0.12.6",
-                "phpstan/phpstan-nette": "^0.12.21",
-                "phpstan/phpstan-strict-rules": "^0.12.10",
-                "staabm/annotate-pull-request-from-checkstyle": "^1.6.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "K2D\\News\\": "src"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "SimpleCMS - News Module",
-            "keywords": [
-                "cms",
-                "nette"
-            ],
-            "time": "2021-08-05T11:26:03+00:00"
         },
         {
             "name": "symfony/console",
@@ -5011,7 +4972,6 @@
         "simple-cms/box-module": 20,
         "simple-cms/core-module": 20,
         "simple-cms/file-module": 20,
-        "simple-cms/news-module": 20,
         "simple-cms/gallery-module": 20
     },
     "prefer-stable": true,

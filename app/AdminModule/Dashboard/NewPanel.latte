@@ -1,0 +1,19 @@
+<div class="card shadow border-0 h-100">
+	<div class="card-body">
+		<h5 class="card-title">Modul Aktuality</h5>
+		<p class="card-text">
+			{if $count === 0}
+				Doposud nebyla vytvořena žádná aktualita
+			{else}
+				V aplikaci se nachází {$count} {$count|plural:'aktualita':'aktuality':'aktualit'}<br />
+            {/if}
+			{if $lastNew}
+				Poslední byla vytvořena {$lastNew->created|date:'j.n.Y'}
+			{/if}
+		</p>
+	</div>
+	<div class="card-footer bg-white border-0 pt-0">
+		<a n:if="$count > 0" href="{plink :Admin:New:default}" class="btn btn-outline-primary btn-sm">Přehled aktualit</a>
+		<a href="{plink :Admin:New:edit}" class="btn btn-outline-success btn-sm">Napsat aktualitu</a>
+	</div>
+</div>
