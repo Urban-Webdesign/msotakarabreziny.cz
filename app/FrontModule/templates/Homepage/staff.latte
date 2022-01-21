@@ -2,6 +2,7 @@
 	<section class="page-section staff-page">
 		<h1 n:block="title">Zaměstnanci</h1>
 		{box staff}
+		<hr class="mb-4">
 
 		<h3 class="mt-5">Učitelky</h3>
 
@@ -11,6 +12,7 @@
 			{foreach $slunicka as $slunicko}
 				<div class="col-sm-12 col-md-6 col-lg-3">
 					<img class="img-fluid" n:if="$slunicko->cover" src="{$basePath}/upload/staff/{$slunicko->id}/{$slunicko->cover}" alt="{$slunicko->name} {$slunicko->surname}">
+					<img class="img-fluid" n:if="$slunicko->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$slunicko->name} {$slunicko->surname}">
 					<h6 class="mt-2"><span n:if="$slunicko->title">{$slunicko->title}</span> {$slunicko->name} {$slunicko->surname}</h6>
 					<p n:if="$slunicko->description">{$slunicko->description}</p>
 				</div>
@@ -24,6 +26,7 @@
 				{foreach $rybicky as $rybicka}
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<img class="img-fluid" n:if="$rybicka->cover" src="{$basePath}/upload/staff/{$rybicka->id}/{$rybicka->cover}" alt="{$rybicka->name} {$rybicka->surname}">
+						<img class="img-fluid" n:if="$rybicka->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$rybicka->name} {$rybicka->surname}">
 						<h6 class="mt-2"><span n:if="$rybicka->title">{$rybicka->title}</span> {$rybicka->name} {$rybicka->surname}</h6>
 						<p n:if="$rybicka->description">{$rybicka->description}</p>
 					</div>
@@ -37,6 +40,7 @@
 				{foreach $veverky as $veverka}
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<img class="img-fluid" n:if="$veverka->cover" src="{$basePath}/upload/staff/{$veverka->id}/{$veverka->cover}" alt="{$veverka->name} {$veverka->surname}">
+						<img class="img-fluid" n:if="$veverka->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$veverka->name} {$veverka->surname}">
 						<h6 class="mt-2"><span n:if="$veverka->title">{$veverka->title}</span> {$veverka->name} {$veverka->surname}</h6>
 						<p n:if="$veverka->description">{$veverka->description}</p>
 					</div>
@@ -45,11 +49,12 @@
 		{/ifset}
 
 		{ifset $broucci}
-		<h5 class="mt-5">Ve 4.třídě "u Broučků"</h5>
+			<h5 class="mt-5">Ve 4.třídě "u Broučků"</h5>
 			<div class="row">
 				{foreach $broucci as $broucek}
 					<div class="col-sm-12 col-md-6 col-lg-3">
 						<img class="img-fluid" n:if="$broucek->cover" src="{$basePath}/upload/staff/{$broucek->id}/{$broucek->cover}" alt="{$broucek->name} {$broucek->surname}">
+						<img class="img-fluid" n:if="$broucek->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$broucek->name} {$broucek->surname}">
 						<h6 class="mt-2"><span n:if="$broucek->title">{$broucek->title}</span> {$broucek->name} {$broucek->surname}</h6>
 						<p n:if="$broucek->description">{$broucek->description}</p>
 					</div>
@@ -57,6 +62,22 @@
 			</div>
 		{/ifset}
 
+		{ifset $other}
+			<h5 class="mt-5">Ostatní učitelky</h5>
+			<div class="row">
+				{foreach $other as $teacher}
+					<div class="col-sm-12 col-md-6 col-lg-3">
+						<img class="img-fluid" n:if="$teacher->cover" src="{$basePath}/upload/staff/{$teacher->id}/{$teacher->cover}" alt="{$teacher->name} {$teacher->surname}">
+						<img class="img-fluid" n:if="$teacher->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$teacher->name} {$teacher->surname}">
+						<h6 class="mt-2"><span n:if="$teacher->title">{$teacher->title}</span> {$teacher->name} {$teacher->surname}</h6>
+						<p n:if="$teacher->description">{$teacher->description}</p>
+					</div>
+				{/foreach}
+			</div>
+		{/ifset}
+
+
+		<hr class="mt-4">
 		{box staff2}
 	</section>
 {/block}
