@@ -2,7 +2,7 @@
 	<section class="page-section">
 		<article class="detail">
 			{if $new !== NULL}
-				<span>Kategorie: <b>{$category->name}</b>√</span> | <time datetime="{$new->created|date:'Y-m-d'}">Zveřejněno: {$new->created|date:'j. m. Y'}</time>
+				<span>Kategorie: <b>{$category->name}</b></span> | <time datetime="{$new->created|date:'Y-m-d'}">Zveřejněno: {$new->created|date:'j. m. Y'}</time>
 				<hr />
 				{if $new->id > 941}
 					<img n:if="$new->cover" class="cover img-thumbnail" src="{$basePath}/upload/news/{$new->id}/{$new->cover}" alt="{$new->title}">

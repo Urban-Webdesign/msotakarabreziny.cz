@@ -14,7 +14,7 @@
 					<img class="img-fluid" n:if="$slunicko->cover" src="{$basePath}/upload/staff/{$slunicko->id}/{$slunicko->cover}" alt="{$slunicko->name} {$slunicko->surname}">
 					<img class="img-fluid" n:if="$slunicko->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$slunicko->name} {$slunicko->surname}">
 					<h6 class="mt-2"><span n:if="$slunicko->title">{$slunicko->title}</span> {$slunicko->name} {$slunicko->surname}</h6>
-					<p n:if="$slunicko->description">{$slunicko->description}</p>
+					<p n:if="$slunicko->description">{$slunicko->description|noescape}</p>
 				</div>
 			{/foreach}
 			</div>
@@ -28,7 +28,7 @@
 						<img class="img-fluid" n:if="$rybicka->cover" src="{$basePath}/upload/staff/{$rybicka->id}/{$rybicka->cover}" alt="{$rybicka->name} {$rybicka->surname}">
 						<img class="img-fluid" n:if="$rybicka->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$rybicka->name} {$rybicka->surname}">
 						<h6 class="mt-2"><span n:if="$rybicka->title">{$rybicka->title}</span> {$rybicka->name} {$rybicka->surname}</h6>
-						<p n:if="$rybicka->description">{$rybicka->description}</p>
+						<p n:if="$rybicka->description">{$rybicka->description|noescape}</p>
 					</div>
 				{/foreach}
 			</div>
@@ -42,7 +42,7 @@
 						<img class="img-fluid" n:if="$veverka->cover" src="{$basePath}/upload/staff/{$veverka->id}/{$veverka->cover}" alt="{$veverka->name} {$veverka->surname}">
 						<img class="img-fluid" n:if="$veverka->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$veverka->name} {$veverka->surname}">
 						<h6 class="mt-2"><span n:if="$veverka->title">{$veverka->title}</span> {$veverka->name} {$veverka->surname}</h6>
-						<p n:if="$veverka->description">{$veverka->description}</p>
+						<p n:if="$veverka->description">{$veverka->description|noescape}</p>
 					</div>
 				{/foreach}
 			</div>
@@ -56,7 +56,7 @@
 						<img class="img-fluid" n:if="$broucek->cover" src="{$basePath}/upload/staff/{$broucek->id}/{$broucek->cover}" alt="{$broucek->name} {$broucek->surname}">
 						<img class="img-fluid" n:if="$broucek->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$broucek->name} {$broucek->surname}">
 						<h6 class="mt-2"><span n:if="$broucek->title">{$broucek->title}</span> {$broucek->name} {$broucek->surname}</h6>
-						<p n:if="$broucek->description">{$broucek->description}</p>
+						<p n:if="$broucek->description">{$broucek->description|noescape}</p>
 					</div>
 				{/foreach}
 			</div>
@@ -70,7 +70,7 @@
 						<img class="img-fluid" n:if="$teacher->cover" src="{$basePath}/upload/staff/{$teacher->id}/{$teacher->cover}" alt="{$teacher->name} {$teacher->surname}">
 						<img class="img-fluid" n:if="$teacher->cover == NULL" src="{$basePath}/dist/img/staff/cover-profile.jpeg" alt="{$teacher->name} {$teacher->surname}">
 						<h6 class="mt-2"><span n:if="$teacher->title">{$teacher->title}</span> {$teacher->name} {$teacher->surname}</h6>
-						<p n:if="$teacher->description">{$teacher->description}</p>
+						<p n:if="$teacher->description">{$teacher->description|noescape}</p>
 					</div>
 				{/foreach}
 			</div>
