@@ -51,13 +51,14 @@ class NewPresenter extends BasePresenter
 	public function renderEdit(?int $id = null): void
 	{
 		$this->template->new = null;
+        $this->template->userId = $this->adminFirewall->getUser()->id;
 
+        bdump($this->template->userId);
 		if ($id !== null && $this->new !== null) {
 			$new = $this->new->toArray();
 
 			$date = $new['created'];
-			assert($date instanceof DateTime);
-			$new['created'] = $date->format('j.n.Y');
+            $new['created'] = date("Y-m-d H:i:s", $date);
 			$form = $this['editForm'];
 			$form->setDefaults($new);
 
@@ -102,8 +103,9 @@ class NewPresenter extends BasePresenter
 
 		$form->onSubmit[] = function (Form $form): void {
 			$values = $form->getValues(true);
-			$values['created'] = date_create_from_format('j.n.Y', $values['created'])->setTime(0, 0);
+			$values['created'] = strtotime($values['created']);
 			$values['slug'] = Strings::webalize($values['title']);
+            $values['author_id'] = $this->adminFirewall->getUser()->id;
 
 			if (!isset($values['lang'])) {
 				$values['lang'] = $this->configuration->getDefaultLanguage();
@@ -140,7 +142,7 @@ class NewPresenter extends BasePresenter
 
 		if ($fileUpload->isOk() && $fileUpload->isImage()) {
 			$image = $fileUpload->toImage();
-			$link = WWW . '/upload/news/' . $this->new->id . '/';
+			$link = WWW . '/upload/news/';
 			$fileName = Helper::generateFileName($fileUpload);
 
 			if (!file_exists($link)) {
@@ -168,7 +170,7 @@ class NewPresenter extends BasePresenter
 
 	public function handleDeleteImage(): void
 	{
-		unlink(WWW . '/upload/news/' . $this->new->id . '/' . $this->new->cover);
+		unlink(WWW . '/upload/news/' . $this->new->cover);
 		$this->new->update(['cover' => null]);
 		$this->flashMessage('Náhledový obrázek byl smazán');
 		$this->redirect('this');
@@ -194,7 +196,7 @@ class NewPresenter extends BasePresenter
 		$cropper = $this->cropperComponentFactory->create();
 
 		if ($this->new->cover !== null) {
-			$cropper->setImagePath('upload/news/' . $this->new->id . '/' . $this->new->cover)
+			$cropper->setImagePath('upload/news/' . $this->new->cover)
 				->setAspectRatio((float) $this->configuration->newAspectRatio);
 		}
 

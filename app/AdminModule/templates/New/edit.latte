@@ -9,7 +9,7 @@
     <a href="#" class="btn btn-primary" onclick="triggerClick('.btn-save')">
         Uložit
     </a>
-    <a n:if="$new" n:href="$vars->showLinkNew $new->slug" class="btn btn-info" target="_blank">
+    <a n:if="$new" n:href="$vars->showLinkNew $new->category->slug, $new->slug" class="btn btn-info" target="_blank">
         Zobrazit na webu
     </a>
     <a n:href="default" class="btn btn-light">
@@ -99,7 +99,7 @@
                 {control dropzone}
                 {if $new->cover}
                     <div class="position-relative" n:if="$new->cover">
-                        <img src="{$basePath}/upload/news/{$new->id}/{$new->cover}?{filemtime(WWW . '/upload/news/' . $new->id . '/' . $new->cover)}" class="img-fluid" />
+                        <img src="{$basePath}/upload/news/{$new->cover}?{filemtime(WWW . '/upload/news/' . $new->cover)}" class="img-fluid" />
                         <div class="position-absolute" style="bottom: 0; width: 100%;">
                             <div class="text-center mb-3">
                                 <a n:href="cropImage!" class="ajax btn btn-primary btn-sm">
