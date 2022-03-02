@@ -4,19 +4,14 @@
 			{if $new !== NULL}
 				<span>Kategorie: <b>{$category->name}</b></span> | <time datetime="{$new->created|date:'Y-m-d'}">Zveřejněno: {$new->created|date:'j. m. Y'}</time>
 				<hr />
-				{if $new->id > 941}
-					<img n:if="$new->cover" class="cover img-thumbnail" src="{$basePath}/upload/news/{$new->id}/{$new->cover}" alt="{$new->title}">
-				{else}
-					<img n:if="$new->cover" class="cover img-thumbnail" src="{$basePath}/upload/news/{$new->cover}.jpg" alt="{$new->title}">
-				{/if}
-
+				<img n:if="$new->cover" class="cover img-thumbnail" src="{$basePath}/upload/news/{$new->cover}" alt="{$new->title}">
 				<h1 n:block="title" class="mb-2">{$new->title}</h1>
 
 				<div class="new-content">
 					{$new->content|noescape}
 				</div>
 
-				<h4 n:if="!empty($images)">Galerie</h4>
+				<h4 class="mt-5" n:if="!empty($images)">Galerie</h4>
 				<div n:if="!empty($images)" class="row">
 					{foreach $images as $image}
 						<a href="{$basePath}/upload/galleries/{$new->gallery_id}/{$image->name}" class="col-sm-6 col-md-4 col-lg-3" data-lightbox="gallery" data-name="{$image->name}">

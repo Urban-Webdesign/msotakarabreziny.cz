@@ -19,7 +19,7 @@ header {
 		padding: 2rem;
 		text-align: center;
 
-		img {
+		.img-bg {
 			display: none;
 		}
 
@@ -265,7 +265,6 @@ table {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	margin-top: 1rem;
 	overflow: hidden;
 	padding: .3rem 0;
 
@@ -276,6 +275,7 @@ table {
 	span {
 		padding: .5rem;
 		background: rgba($primary, .1);
+		color: $primary;
 	}
 }
 
