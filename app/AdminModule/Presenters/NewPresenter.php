@@ -102,9 +102,6 @@ class NewPresenter extends BasePresenter
 			->setPrompt('Žádná')
 			->setItems($this->galleries->getForSelect());
 
-		$form->addTextArea('perex', 'Perex', 100, 5)
-			->setHtmlAttribute('class', 'form-wysiwyg');
-
 		$form->addTextArea('content', 'Obsah', 100, 25)
 			->setHtmlAttribute('class', 'form-wysiwyg');
 
