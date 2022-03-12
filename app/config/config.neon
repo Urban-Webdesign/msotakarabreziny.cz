@@ -33,6 +33,10 @@ parameters:
 				service: admin.dashboard.newpanel
 				size: 3
 				order: 50
+	privileges:
+	    admin:
+	        new:
+	        staff:
 	dictionary:
-	    admin.news: 'Aktuality'
+	    admin.new: 'Aktuality / Články'
 	    admin.staff: 'Zaměstnanci'

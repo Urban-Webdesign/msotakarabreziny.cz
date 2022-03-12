@@ -52,7 +52,7 @@ class NewPresenter extends BasePresenter
     {
         parent::startup();
 
-        if (!$this->adminFirewall->isAllowed('news')) {
+        if (!$this->adminFirewall->isAllowed('new')) {
             $this->accessDenied();
         }
     }
@@ -87,8 +87,8 @@ class NewPresenter extends BasePresenter
 			->setDefaultValue((new DateTime())->format('j.n.Y'))
 			->setRequired('Musíte uvést datum aktuality');
 
-		$form->addSelect('category_id', 'Kategorie:')
-			->setItems($this->categories->getForSelect());
+        $form->addSelect('category_id', 'Kategorie:')
+            ->setItems($this->categories->getForSelect());
 
 		if ($this->configuration->getLanguagesCount() > 1) {
 			$form->addSelect('lang', 'Jazyk:')
