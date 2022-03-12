@@ -47,7 +47,9 @@ class HomepagePresenter extends BasePresenter
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-		$this->template->news = $this->repository->getNewsByCategory('Aktuality')->limit($paginator->getLength(), $paginator->getOffset());
+		$news = $this->repository->getNewsByCategory('Aktuality')->limit($paginator->getLength(), $paginator->getOffset());
+
+        $this->template->news = $news;
         $this->template->paginator = $paginator;
 	}
 

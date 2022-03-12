@@ -33,3 +33,6 @@ parameters:
 				service: admin.dashboard.newpanel
 				size: 3
 				order: 50
+	dictionary:
+	    admin.news: 'Aktuality'
+	    admin.staff: 'Zaměstnanci'

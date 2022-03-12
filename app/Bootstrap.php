@@ -13,6 +13,12 @@ use function file_exists;
 class Bootstrap
 {
 
+    public static function bootForCron(): Configurator
+    {
+        # Debug mód pouze pokud existuje --debug přepínač
+        return self::createConfigurator(in_array('--debug', $_SERVER['argv'], true));
+    }
+
 	public static function boot(): Configurator
 	{
 		if (file_exists(__DIR__ . '/../.env')) {

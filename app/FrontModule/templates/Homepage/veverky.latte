@@ -4,15 +4,15 @@
 
 		<div n:ifset="$news" class="pagination">
 			{if !$paginator->isFirst()}
-				<a class="mr-3" n:href="default 1">První</a>
-				<a class="mr-3" n:href="default $paginator->page-1">Předchozí</a>
+				<a class="mr-3" n:href="veverky 1">První</a>
+				<a class="mr-3" n:href="veverky $paginator->page-1">Předchozí</a>
 			{/if}
 
 				<span>Stránka {$paginator->page} z {$paginator->pageCount}</span>
 
 				{if !$paginator->isLast()}
-				<a class="ml-3" n:href="default $paginator->page+1">Další</a>
-				<a class="ml-3" n:href="default $paginator->pageCount">Poslední</a>
+				<a class="ml-3" n:href="veverky $paginator->page+1">Další</a>
+				<a class="ml-3" n:href="veverky $paginator->pageCount">Poslední</a>
 			{/if}
 		</div>
 
@@ -23,8 +23,9 @@
 						<img n:ifset="$new->cover" src="{$basePath}/upload/news/{$new->cover}" alt="{$new->title}">
 						<section>
 							<h3>{$new->title}</h3>
-							<div n:ifset="$new->content" class="perex">{$new->content|striptags|truncate:300|noescape}{if ($new->content|length) > 300}...{/if}</div>
+							<div n:ifset="$new->content" class="perex">{$new->content|striptags|truncate:300|noescape}</div>
 							<time datetime="{$new->created|date:'Y-m-d'}">{$new->created|date:'j. m. Y'}</time>
+							<i class="d-block pt-1">{$new->author->name}</i>
 						</section>
 					</a>
 				</article>
@@ -33,15 +34,15 @@
 
 		<div n:ifset="$news" class="pagination mt-4">
 			{if !$paginator->isFirst()}
-				<a class="mr-3" n:href="default 1">První</a>
-				<a class="mr-3" n:href="default $paginator->page-1">Předchozí</a>
+				<a class="mr-3" n:href="veverky 1">První</a>
+				<a class="mr-3" n:href="veverky $paginator->page-1">Předchozí</a>
 			{/if}
 
 				<span>Stránka {$paginator->page} z {$paginator->pageCount}</span>
 
 				{if !$paginator->isLast()}
-				<a class="ml-3" n:href="default $paginator->page+1">Další</a>
-				<a class="ml-3" n:href="default $paginator->pageCount">Poslední</a>
+				<a class="ml-3" n:href="veverky $paginator->page+1">Další</a>
+				<a class="ml-3" n:href="veverky $paginator->pageCount">Poslední</a>
 			{/if}
 		</div>
 
