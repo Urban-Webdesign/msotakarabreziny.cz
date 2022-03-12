@@ -18,13 +18,12 @@ class RouterFactory
 			->addRoute('admin/<presenter>/<action>[/<id>]', 'Homepage:default');
 
 		$router->withModule('Front')
-            ->addRoute('[<lang=cs (cs)>/]', 'Homepage:default')
+            ->addRoute('[<lang=cs (cs)>/][aktuality-<page>]', 'Homepage:default')
             ->addRoute('[<lang=cs (cs)>/]<class (aktuality|slunicka|rybicky|veverky|brooucci)>/<slug>', 'Homepage:show')
-            ->addRoute('[<lang=cs (cs)>/]aktuality', 'Homepage:default')
-			->addRoute('[<lang=cs (cs)>/]slunicka/[<page>]', 'Homepage:slunicka')
-			->addRoute('[<lang=cs (cs)>/]rybicky/[<page>]', 'Homepage:rybicky')
-			->addRoute('[<lang=cs (cs)>/]veverky/[<page>]', 'Homepage:veverky')
-			->addRoute('[<lang=cs (cs)>/]broucci/[<page>]', 'Homepage:broucci')
+			->addRoute('[<lang=cs (cs)>/]slunicka[-<page>]', 'Homepage:slunicka')
+			->addRoute('[<lang=cs (cs)>/]rybicky[-<page>]', 'Homepage:rybicky')
+			->addRoute('[<lang=cs (cs)>/]veverky[-<page>]', 'Homepage:veverky')
+			->addRoute('[<lang=cs (cs)>/]broucci[-<page>]', 'Homepage:broucci')
 			->addRoute('[<lang=cs (cs)>/]o-nas', 'Homepage:about')
 			->addRoute('[<lang=cs (cs)>/]rozpocet', 'Homepage:budget')
 			->addRoute('[<lang=cs (cs)>/]projekty-a-spoluprace', 'Homepage:projects')
