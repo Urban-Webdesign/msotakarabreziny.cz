@@ -88,7 +88,24 @@ class NewPresenter extends BasePresenter
 			->setRequired('Musíte uvést datum aktuality');
 
         $form->addSelect('category_id', 'Kategorie:')
-            ->setItems($this->categories->getForSelect());
+            ->setRequired('Musíte zvolit kategorii')
+            ->setItems([
+                1 => 'Aktuality',
+                2 => 'Sluníčka',
+                3 => 'Rybičky',
+                4 => 'Veverky',
+                5 => 'Broučči'
+            ]);
+
+        $form->addSelect('category_id2', 'Sekundární kategorie (nepovinné):')
+            ->setItems([
+                0 => '-------',
+                1 => 'Aktuality',
+                2 => 'Sluníčka',
+                3 => 'Rybičky',
+                4 => 'Veverky',
+                5 => 'Broučči'
+            ]);
 
 		if ($this->configuration->getLanguagesCount() > 1) {
 			$form->addSelect('lang', 'Jazyk:')

@@ -34,7 +34,7 @@ class NewGrid extends BaseV2Grid
 		$this->setFilterFactory([$this, 'gridFilterFactory']);
 
 		$this->addColumn('title', 'Nadpis');
-		$this->addColumn('category_id', 'Kategorie');
+        $this->addColumn('category_id', 'Kategorie');
 		$this->addColumn('contents', 'Obsah');
 
 		if ($this->presenter->configuration->getLanguagesCount() > 1) {

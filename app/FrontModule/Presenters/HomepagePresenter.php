@@ -40,14 +40,14 @@ class HomepagePresenter extends BasePresenter
 
 	public function renderDefault(int $page = 1): void
 	{
-        $newsCount = $this->repository->getNewsByCategoryCount('Aktuality');
+        $newsCount = $this->newModel->getNewsByCategoryCount(1);
 
         $paginator = new Paginator;
         $paginator->setPage($page); // číslo aktuální stránky
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-		$news = $this->repository->getNewsByCategory('Aktuality')->limit($paginator->getLength(), $paginator->getOffset());
+		$news = $this->newModel->getPublicNewsByCategory(1)->limit($paginator->getLength(), $paginator->getOffset());
 
         $this->template->news = $news;
         $this->template->paginator = $paginator;
@@ -67,66 +67,76 @@ class HomepagePresenter extends BasePresenter
 
     public function renderAktuality(int $page = 1): void
     {
-        $newsCount = $this->repository->getNewsByCategoryCount('Aktuality');
+        $newsCount = $this->newModel->getNewsByCategoryCount(1);
 
         $paginator = new Paginator;
         $paginator->setPage($page); // číslo aktuální stránky
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-        $this->template->news = $this->repository->getNewsByCategory('Aktuality')->limit($paginator->getLength(), $paginator->getOffset());
+        $news = $this->newModel->getPublicNewsByCategory(1)->limit($paginator->getLength(), $paginator->getOffset());
+
+        $this->template->news = $news;
         $this->template->paginator = $paginator;
     }
 
 	public function renderSlunicka(int $page = 1): void
 	{
-        $newsCount = $this->repository->getNewsByCategoryCount('Sluníčka');
+        $newsCount = $this->newModel->getNewsByCategoryCount(2);
 
         $paginator = new Paginator;
         $paginator->setPage($page); // číslo aktuální stránky
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-        $this->template->news = $this->repository->getNewsByCategory('Sluníčka')->limit($paginator->getLength(), $paginator->getOffset());
+        $news = $this->newModel->getPublicNewsByCategory(2)->limit($paginator->getLength(), $paginator->getOffset());
+
+        $this->template->news = $news;
         $this->template->paginator = $paginator;
 	}
 
 	public function renderRybicky(int $page = 1): void
 	{
-        $newsCount = $this->repository->getNewsByCategoryCount('Rybičky');
+        $newsCount = $this->newModel->getNewsByCategoryCount(3);
 
         $paginator = new Paginator;
         $paginator->setPage($page); // číslo aktuální stránky
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-        $this->template->news = $this->repository->getNewsByCategory('Rybičky')->limit($paginator->getLength(), $paginator->getOffset());
+        $news = $this->newModel->getPublicNewsByCategory(3)->limit($paginator->getLength(), $paginator->getOffset());
+
+        $this->template->news = $news;
         $this->template->paginator = $paginator;
 	}
 
 	public function renderVeverky(int $page = 1): void
 	{
-        $newsCount = $this->repository->getNewsByCategoryCount('Veverky');
+        $newsCount = $this->newModel->getNewsByCategoryCount(4);
 
         $paginator = new Paginator;
         $paginator->setPage($page); // číslo aktuální stránky
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-        $this->template->news = $this->repository->getNewsByCategory('Veverky')->limit($paginator->getLength(), $paginator->getOffset());
+        $news = $this->newModel->getPublicNewsByCategory(4)->limit($paginator->getLength(), $paginator->getOffset());
+
+        $this->template->news = $news;
         $this->template->paginator = $paginator;
 	}
 
 	public function renderBroucci(int $page = 1): void
 	{
-        $newsCount = $this->repository->getNewsByCategoryCount('Broučci');
+        $newsCount = $this->newModel->getNewsByCategoryCount(5);
 
         $paginator = new Paginator;
         $paginator->setPage($page); // číslo aktuální stránky
         $paginator->setItemsPerPage(10); // počet položek na stránce
         $paginator->setItemCount($newsCount); // celkový počet položek, je-li znám
 
-        $this->template->news = $this->repository->getNewsByCategory('Broučci')->limit($paginator->getLength(), $paginator->getOffset());
+        $news = $this->newModel->getPublicNewsByCategory(5)->limit($paginator->getLength(), $paginator->getOffset());
+
+        $this->template->news = $news;
         $this->template->paginator = $paginator;
 	}
 
