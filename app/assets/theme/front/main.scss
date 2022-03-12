@@ -255,6 +255,10 @@ table {
 			}
 		}
 
+		.no-img {
+			grid-template-areas:
+			"section";
+		}
 	}
 }
 
