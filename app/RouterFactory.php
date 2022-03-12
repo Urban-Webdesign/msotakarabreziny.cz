@@ -19,7 +19,7 @@ class RouterFactory
 
 		$router->withModule('Front')
             ->addRoute('[<lang=cs (cs)>/][aktuality-<page>]', 'Homepage:default')
-            ->addRoute('[<lang=cs (cs)>/]<class (aktuality|slunicka|rybicky|veverky|brooucci)>/<slug>', 'Homepage:show')
+            ->addRoute('[<lang=cs (cs)>/]<class (aktuality|slunicka|rybicky|veverky|broucci)>/<slug>', 'Homepage:show')
 			->addRoute('[<lang=cs (cs)>/]slunicka[-<page>]', 'Homepage:slunicka')
 			->addRoute('[<lang=cs (cs)>/]rybicky[-<page>]', 'Homepage:rybicky')
 			->addRoute('[<lang=cs (cs)>/]veverky[-<page>]', 'Homepage:veverky')

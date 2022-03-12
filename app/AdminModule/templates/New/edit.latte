@@ -41,7 +41,7 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     {label title}{/label}
-                                    {input title class => 'form-control form-control-sm'}
+                                    {input title class => 'form-control form-control'}
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -53,14 +53,14 @@
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     {label created}{/label}
-                                    {input created class => 'form-control form-control-sm form-date'}
+                                    {input created class => 'form-control form-control form-date'}
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     {label gallery_id}{/label}
                                     <small class="text-muted float-right">(nepovinné)</small>
-                                    {input gallery_id class => 'form-control form-control-sm'}
+                                    {input gallery_id class => 'form-control form-select'}
                                 </div>
                             </div>
                             <div class="col-lg-2" n:if="$presenter->configuration->getLanguagesCount() > 1">
