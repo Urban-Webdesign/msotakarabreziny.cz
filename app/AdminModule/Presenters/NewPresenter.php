@@ -48,6 +48,15 @@ class NewPresenter extends BasePresenter
 	/** @inject */
 	public CropperComponentFactory $cropperComponentFactory;
 
+    public function startup(): void
+    {
+        parent::startup();
+
+        if (!$this->adminFirewall->isAllowed('news')) {
+            $this->accessDenied();
+        }
+    }
+
 	public function renderEdit(?int $id = null): void
 	{
 		$this->template->new = null;

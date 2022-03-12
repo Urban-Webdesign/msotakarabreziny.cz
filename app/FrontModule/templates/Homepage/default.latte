@@ -25,6 +25,7 @@
 							<h3>{$new->title}</h3>
 							<div n:ifset="$new->content" class="perex">{$new->content|striptags|truncate:300|noescape}{if ($new->content|length) > 300}...{/if}</div>
 							<time datetime="{$new->created|date:'Y-m-d'}">{$new->created|date:'j. m. Y'}</time>
+							<i>{$new->author->name}</i>
 						</section>
 					</a>
 				</article>
