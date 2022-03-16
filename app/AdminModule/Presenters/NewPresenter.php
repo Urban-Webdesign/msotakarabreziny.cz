@@ -2,6 +2,7 @@
 
 namespace App\AdminModule\Presenters;
 
+use App\Model\AuthorModel;
 use K2D\Core\AdminModule\Component\CropperComponent\CropperComponent;
 use K2D\Core\AdminModule\Component\CropperComponent\CropperComponentFactory;
 use K2D\Core\AdminModule\Presenter\BasePresenter;
@@ -36,10 +37,13 @@ class NewPresenter extends BasePresenter
 	/** @inject */
 	public CategoryModel $categories;
 
-	/** @inject */
-	public GalleryModel $galleries;
+    /** @inject */
+    public GalleryModel $galleries;
 
-	/** @inject */
+    /** @inject */
+    public AuthorModel $authorModel;
+
+    /** @inject */
 	public NewGridFactory $newGridFactory;
 
 	/** @inject */
@@ -67,7 +71,8 @@ class NewPresenter extends BasePresenter
 			$new = $this->new->toArray();
 
 			$date = $new['created'];
-            $new['created'] = date("Y-m-d H:i:s", $date);
+            $new['created'] = $date->format('j.n.Y');
+
 			$form = $this['editForm'];
 			$form->setDefaults($new);
 
@@ -83,6 +88,10 @@ class NewPresenter extends BasePresenter
 			->addRule(Form::MAX_LENGTH, 'Maximálné délka je %s znaků', 255)
 			->setRequired('Musíte uvést nadpis aktuality');
 
+        $form->addSelect('author_id', 'Autor:')
+            ->setItems($this->authorModel->getForSelect())
+            ->setDefaultValue($this->adminFirewall->getUser()->id);
+
 		$form->addText('created', 'Datum:')
 			->setDefaultValue((new DateTime())->format('j.n.Y'))
 			->setRequired('Musíte uvést datum aktuality');
@@ -97,7 +106,7 @@ class NewPresenter extends BasePresenter
                 5 => 'Broučči'
             ]);
 
-        $form->addSelect('category_id2', 'Sekundární kategorie (nepovinné):')
+        $form->addSelect('category_id2', 'Kategorie 2:')
             ->setItems([
                 0 => '-------',
                 1 => 'Aktuality',
@@ -126,9 +135,8 @@ class NewPresenter extends BasePresenter
 
 		$form->onSubmit[] = function (Form $form): void {
 			$values = $form->getValues(true);
-			$values['created'] = strtotime($values['created']);
+            $values['created'] = date_create_from_format('j.n.Y', $values['created'])->setTime(0, 0, 0);
 			$values['slug'] = Strings::webalize($values['title']);
-            $values['author_id'] = $this->adminFirewall->getUser()->id;
 
 			if (!isset($values['lang'])) {
 				$values['lang'] = $this->configuration->getDefaultLanguage();

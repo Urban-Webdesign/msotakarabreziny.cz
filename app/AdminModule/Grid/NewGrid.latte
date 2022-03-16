@@ -24,6 +24,13 @@
 	</td>
 {/define}
 
+
+{define body-cell-author_id}
+	<td class="text-center">
+		{$record->author->name}
+	</td>
+{/define}
+
 {define body-cell-public}
 	<td class="text-center">
 		{if $record->public}
