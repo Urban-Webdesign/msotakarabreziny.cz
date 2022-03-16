@@ -2,6 +2,7 @@
 
 namespace App\AdminModule\Grid;
 
+use App\Model\AuthorModel;
 use K2D\Core\AdminModule\Grid\BaseV2Grid;
 use App\Model\CategoryModel;
 use App\Model\NewModel;
@@ -15,12 +16,15 @@ class NewGrid extends BaseV2Grid
 
 	private NewModel $newModel;
 
-	private CategoryModel $categoryModel;
+    private CategoryModel $categoryModel;
 
-	public function __construct(NewModel $newModel, CategoryModel $categoryModel)
+    private AuthorModel $authorModel;
+
+	public function __construct(NewModel $newModel, CategoryModel $categoryModel, AuthorModel $authorModel)
 	{
 		parent::__construct();
 		$this->newModel = $newModel;
+        $this->authorModel = $authorModel;
 		$this->categoryModel = $categoryModel;
 	}
 
@@ -42,6 +46,7 @@ class NewGrid extends BaseV2Grid
 		}
 
 		$this->addColumn('created', 'Vytvořeno')->setSortable();
+        $this->addColumn('author_id', 'Autor');
 		$this->addColumn('public', 'Veřejná');
 		$this->addColumn('gallery_id', 'Galerie');
 
@@ -57,7 +62,7 @@ class NewGrid extends BaseV2Grid
 			->setProtected(false)
 			->setConfirmation('Opravdu chcete novinku smazat?');
 
-		$this->hotFilters = ['title', 'category_id', 'public'];
+		$this->hotFilters = ['title', 'category_id', 'author_id', 'public'];
 	}
 
 	public function gridFilterFactory(Container $c): void
@@ -65,7 +70,16 @@ class NewGrid extends BaseV2Grid
 		$c->addText('title', 'Nadpis')->setHtmlAttribute('placeholder', 'Filtrovat dle nadpisu');
 		$c->addSelect('category_id')
 			->setPrompt('Filtrovat dle kategorie')
-			->setItems($this->categoryModel->getForSelect());
+            ->setItems([
+                1 => 'Aktuality',
+                2 => 'Sluníčka',
+                3 => 'Rybičky',
+                4 => 'Veverky',
+                5 => 'Broučči'
+            ]);
+        $c->addSelect('author_id')
+            ->setPrompt('Filtrovat dle autora')
+            ->setItems($this->authorModel->getForSelect());
 		$c->addSelect('public')
 			->setPrompt('Zveřejněno')
 			->setItems([0 => 'Ne', 1 => 'Ano']);

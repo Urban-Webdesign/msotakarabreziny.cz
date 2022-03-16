@@ -18,6 +18,7 @@ services:
 	- App\Model\ClassModel
 	- App\Model\CategoryModel
 	- App\Model\NewModel
+	- App\Model\AuthorModel
 	# Dashboard
 	admin.dashboard.newpanel: App\AdminModule\Dashboard\NewPanelFactory
 
